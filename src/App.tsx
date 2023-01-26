@@ -10,21 +10,25 @@ function App() {
     if(inputData) {
 
       event.preventDefault()
-        setHTTPCode(inputData)
+      setHTTPCode(inputData)
     }
   }
 
   return (
     <>
        <main className="App">
-        <img src={`https://http.cat/${HTTPCode}`} alt="random http images whit codes" />
+        <div className="wrapper">
+          <img className="img" src={`https://http.cat/${HTTPCode}`} alt="random http images whit codes" />
+        </div>
 
-        <form action="">
-          <label className='label' htmlFor="inputText">Digite um código de 3 números</label>
-          <input id="inputText" minLength={3} maxLength={3} type="text" required onChange={(e) => setInputData(e.target.value)} placeholder='algum código http'/>
+        <div className="wrapper">
+          <form>
+            <label className='label' htmlFor="inputText">Digite um código de 3 números</label>
+            <input id="inputText" minLength={3} maxLength={3} type="text" required onChange={(e) => setInputData(e.target.value)} placeholder='algum código http'/>
 
-          <button onClick={handleClick}>Enviar</button>
-        </form>
+            <button onClick={handleClick}>Enviar</button>
+          </form>
+        </div>
       </main>
     </>
    
